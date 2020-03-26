@@ -1,0 +1,48 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/lib/twitter-bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <title>Index</title>
+</head>
+<body style="margin-left:30px">
+    <div id="app">
+        <h1>{{ message }}</h1>
+        <hr />
+        <button class="btn btn-info" v-on:click="sayHello()">Say Hello</button>
+    </div>
+
+    <script src="~/jquery/jquery.min.js"></script>
+    <script src="~/lib/twitter-bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/vue/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: null
+            },
+            methods: {
+                sayHello: function () {
+
+                    if (this.message === null) {
+
+                        this.message = 'Hello world!'
+                    }
+                    else {
+
+                        this.message = null
+
+                    }
+                    
+                }
+            }
+        })
+    </script>
+</body>
+</html>
