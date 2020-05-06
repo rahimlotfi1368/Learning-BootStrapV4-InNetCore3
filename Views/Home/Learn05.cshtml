@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Models.Employee>
+@{
+    ViewData["Title"] = "Learn05";
+
+}
+
+    <br />
+    <div class="alert alert-light alert-dismissible fade show border-dark ">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+        <h3>Employees</h3>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                string imagePath = Url.Content($"~/Images/{item.Name}.jpg");
+
+                @*<div class="col-sm-4">
+                    <div class="card text-center bg-primary border-secondary m-4">
+                        <img src=@imagePath class="rounded-circle  card-img-top" alt="card title" />
+
+                        <div class="card-header">
+                            <h3>
+                                @item.Name<small> @item.JobTitle</small>
+                            </h3>
+                        </div>
+
+                        <div class="card-body">
+                            <p class="card-title">
+                                @item.Resume
+                            </p>
+                        </div>
+                    </div>
+                </div>*@
+
+                <div class="col-md-4">
+                    <div class="card text-center border-0">
+                        <div class="card-body">
+                            @*<img src=@imagePath alt="@item.Name" class="rounded img-responsive">*@
+                            <img src=@imagePath alt="@item.Name" class="rounded-circle img-responsive">
+                            @*<img src=@imagePath alt="@item.Name" class="img-thumbnail img-responsive">*@
+                            <h4>
+                                @item.Name<small> @item.JobTitle</small>
+                            </h4>
+                            <p>@item.Resume</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                @*<div class="col-md-4">
+                    <img src=@imagePath alt="@item.Name" style="width:200px;height:200px" class="rounded-circle img-responsive">
+                    <h3>
+                        @item.Name<small> @item.JobTitle</small>
+                    </h3>
+                    <p>@item.Resume</p>
+                </div>*@
+
+
+            }
+        </div>
+    </div>
+
+
+
+
+

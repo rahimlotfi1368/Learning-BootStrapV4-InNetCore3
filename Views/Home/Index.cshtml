@@ -1,26 +1,31 @@
 ﻿
 @{
-    Layout = null;
+    ViewData["Title"] = "Index";
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <link href="~/lib/twitter-bootstrap/css/bootstrap.min.css" rel="stylesheet" />
-    <title>Index</title>
-</head>
-<body style="margin-left:30px">
-    <div id="app">
-        <h1 class="text-center text-capitalize text-danger">{{ message }}</h1>
+    <h3 class="text-center text-info">
+        <a  href="https://www.w3schools.com/">The Best Way To Learn Web Development Technologies</a>
+    </h3>
+    
+        <h1 class="text-danger">Index</h1>
+        <div id="app">
+            <a class="text-center text-capitalize text-danger" href="https://www.w3schools.com/bootstrap4/">
+                <h5 >{{ message }}</h5>
+            </a>
+            <hr />
+            <button class="btn btn-info text-center" v-on:click="say()">The Best Way To Learn</button>
+        </div>
         <hr />
-        <button class="btn btn-info" v-on:click="sayHello()">Say Hello</button>
-    </div>
 
-    <script src="~/jquery/jquery.min.js"></script>
-    <script src="~/lib/twitter-bootstrap/js/bootstrap.min.js"></script>
-    <script src="~/vue/vue.js"></script>
+        @for (int index = 1; index < 30; index++)
+        {
+            @Html.ActionLink(linkText: (index < 10 ? $" Let's Go To Learn0{index} :-) " : $"Let's Go To Learn{index} :-) "), actionName: (index < 10 ? $"Learn0{index}" : $"Learn{index}"), controllerName: "Home", routeValues: new { Area = "" }, htmlAttributes: new { @class = "navbar-brand" })
+            <br />
+        }
+    
+
+
+@section Scripts{
     <script>
         var app = new Vue({
             el: '#app',
@@ -28,21 +33,20 @@
                 message: null
             },
             methods: {
-                sayHello: function () {
+                say: function () {
 
                     if (this.message === null) {
 
-                        this.message = 'Hello world!'
+                        this.message = "The Best Way To Learn BootStrap V4 Is This Link..."
                     }
                     else {
 
                         this.message = null
 
                     }
-                    
+
                 }
             }
         })
     </script>
-</body>
-</html>
+}

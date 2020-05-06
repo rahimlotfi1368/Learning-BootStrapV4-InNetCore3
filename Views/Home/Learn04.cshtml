@@ -1,0 +1,55 @@
+﻿@model ViewModels.LoginViewModel
+@{
+    ViewData["Title"] = "Learn04";
+}
+
+<div class="row  " >
+    <div class="card " style="width: 400px;@*margin-left:400px*@">
+        <div class="card-header" style="background-color:lightblue">
+            <h5>Learn04:Vertical/basic forms (Login)</h5>
+        </div>
+
+        <div class="card-body">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group row">
+
+                    @Html.LabelFor(model => model.Username, htmlAttributes: new { @class = "col-sm-4  form-control-label " })
+                    <div class="col-sm-8 ">
+                        @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter your Username" } })
+                        @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+                    </div>
+
+                </div>
+
+                <div class="form-group row">
+
+                    @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "col-sm-4 form-control-label " })
+                    <div class="col-sm-8">
+                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", placeholder = "Enter your Password" } })
+                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+                <hr />
+                <p class="text-center" style="color:red">@(ViewData["status"])</p>
+            }
+        </div>
+
+        <div class="card-footer" style="background-color:lightblue">
+                     
+            @Html.ActionLink(linkText: "Back to list", actionName: "Index", controllerName: "Home", routeValues: new { Area = "" }, htmlAttributes: new { @class = "navbar-brand" })
+        </div>
+    </div>
+</div>
+
+
+
+
+

@@ -1,0 +1,21 @@
+﻿@model ViewModels.DataViewModel
+@{
+    ViewData["Title"] = "Learn06";
+ }
+  
+<h4>Learn06</h4>   
+<br />
+<div class="row">
+    <div class="col-sm-12">
+        <figure class="figure">
+            <img id="Learn06Image" style="width:800px;height:500px;" src=@Url.Content($"~/Images/{Model.Id}.jpg") class="figure-img img-fluid img-thumbnail" alt="Tree"  />
+            <figcaption class="figure-caption">
+                <p>
+                    @Model.Text
+                    <code>http://getbootstrap.com</code>
+                </p>
+            </figcaption>
+        </figure>
+    </div>
+
+</div>

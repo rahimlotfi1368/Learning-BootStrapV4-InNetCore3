@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/lib/twitter-bootstrap/css/Styles.css" rel="stylesheet" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+      
+    <div class="container">
+        <h3> Here is My Default Layout</h3>
+        @RenderBody()
+    </div>
+
+
+    <script src="~/jquery/jquery.min.js"></script>
+    <script src="~/lib/twitter-bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/vue/vue.min.js"></script>
+    @RenderSection(name: "Scripts", required: false)
+</body>
+</html>

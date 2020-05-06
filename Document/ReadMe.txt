@@ -1,0 +1,1 @@
+﻿Install-Package cloudscribe.Web.Pagination -Version 3.0.0
